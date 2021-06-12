@@ -3,12 +3,39 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!-- 
+	О, ты пришел сюда из файла main.css?
+	Я знаю зачем ты сюда пришел!
+
+	Чтобы стили заработали, ты должен прописать здесь, в теге head, тег <link>.
+	Этот тег позволит тебе подключить файл main.css, и все стили которые прописаны в нём -
+	заработают.
+	Для этого напиши <link> и добавь к нему следующие атрибуты:
+
+	rel="stylesheet"
+	Что это за атрибут? что это за странное слово, "stylesheet"?
+	Всё просто - атрибут rel указывает на тип подключаемого файла, а stylesheet
+	означает то, что мы хотим подключить "таблицу стилей".
+
+	href="css/main.css"
+	А это ещё что за атрибут.. хреф? хрюф?
+	По Английски - "Hyper Reference", что значит гипер-ссылка.
+
+	Этот атрибут обязателен для ссылок, так как в его значение прописывается путь к нашему CSS файлу.
+	Мы в значении атрибута написали "сss/main.css".. что это значит?
+	Это путь к нашему файлу.
+	Ну, это можно прочитать так:
+	"Залезть в папку css и найти файл main.css".
+
+	Вот и всё! после перезагрузки страницы в браузере всё изменится и будут применены
+	наши css стили. Теперь иди вниз...
+	-->
+	<link rel="stylesheet" href="css/main.css">
 	<title>HTML</title>
 </head>
 <body>
 	<!--
-										OLD
+											OLD
 		Шапка сайта
 <header>
 		Навигационное меню 
@@ -83,9 +110,9 @@
 		quod officiis adipisci.
 	</p>
 
-	 ul & ol - создают списки, нумерованные & не нумерованные (ol - ordered list - 
+	 ul & ol - создают списки, нумерованные & ненумерованные (ol - ordered list - 
 	нумерованный список, ul - unordered list - ненумерованный список). Внутри этих тегов 
-	обязательно должны быть li (от англ. - list item, элемент списка).  
+	обязательно должны быть li (от англ. - list item, элемент списка).
 
 	<ul>
 		<li>содержимое элементов списка</li>
@@ -180,7 +207,7 @@
 		а твои амбиции не должны выходить за рамки компании.
 	</p>
 
-										OLD
+											OLD
 
 	form - тег, который позволяет создать поля, веб-формы для 
 	ввода паролей, текста, логинов и т.п данных.
@@ -324,9 +351,12 @@
 
 	</form>
 
-	-->
 
-	<form action="#" method="post" enctype="multipart/form-data">
+											OLD -->
+
+	<!-- Применяем изученное -->
+
+	<!-- <form action="#" method="post" enctype="multipart/form-data">
 		<div>
 			<p>Имя</p>
 			<input placeholder="Имя" type="text" name="username" tabindex="1">
@@ -394,8 +424,46 @@
 				Очистить
 			</button>
 		</div>
-	</form>
-	
+	</form> -->
+
+	<!--
+	О, ты уже здесь? круто!
+	Таак... мы с тобой обратились в нашем css файле ко всем тегам span, и теперь
+	какой бы текст мы не обернули в span - он становится красным и большим.
+	А что если мы хотим чтобы эти стили применялись лишь к конкретным span'ам?
+	Саааамый популярный способ - использовать селектор css по классам!
+
+	Что такое класс? это атрибут, который может быть указан для любого html тега, это
+	так сказать его собственное имя.
+	Класс добавляется вот так: class="(имя класса на Английском)".
+
+	А теперь добавим класс bigred к тегу span:
+	-->
+
+	<!--
+	UPDATE 1 - Убрал класс bigred у спанов, оставил у тега p, добавил еще тегов span.
+	UPDATE 2 - Добавил тег div с классом block, удалил класс bigred
+	 -->
+	 <div class="block">
+
+		<p>
+			Lorem ipsum dolor sit amet, <span>consectetur adipisicing elit.</span>
+			Suscipit, voluptate? <span>dolor sit amet consectetur adipisicing elit.</span> Iusto, aliquid.
+		</p>
+		<p>
+			Lorem <span>ipsum dolor sit amet</span> consectetur adipisicing elit.
+		</p>
+
+		<div>
+			<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, delectus.
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, ex.
+			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam, voluptatibus!
+			</p>
+		</div>
+
+	 </div>
+
 <!-- Скрипт -->
 <script src="script.js"></script>
 </body>
