@@ -1,433 +1,104 @@
+<!-- Сообщаем браузеру как стоит обрабатывать эту страницу -->
 <!DOCTYPE html>
+<!-- Оболочка документа, указываем язык содержимого -->
 <html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- 
-	О, ты пришел сюда из файла main.css?
-	Я знаю зачем ты сюда пришел!
+	<!-- Заголовок страницы, контейнер для других важных данных (содержимое не отображается) -->
+	<head>
+		<!-- Заголовок страницы в браузере -->
+		<title>HTML</title>
+		<!-- Кодировка страницы -->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<!-- Отображаемое тело страницы -->
+	<body>
+		<!--
+		До начала урока скажу, что на самом деле этот урок - второй, а не первый.
+		Всё дело в том, что первый урок идет всего лишь 5 минут и там Жека почти ничего не рассказывает, поэтому
+		я решил сделать второй урок - первым, третий - вторым,  четвертый - третим и так далее.
+		-->
 
-	Чтобы стили заработали, ты должен прописать здесь, в теге head, тег <link>.
-	Этот тег позволит тебе подключить файл main.css, и все стили которые прописаны в нём -
-	заработают.
-	Для этого напиши <link> и добавь к нему следующие атрибуты:
+		<!-- Урок №1 - HTML теги -->
 
-	rel="stylesheet"
-	Что это за атрибут? что это за странное слово, "stylesheet"?
-	Всё просто - атрибут rel указывает на тип подключаемого файла, а stylesheet
-	означает то, что мы хотим подключить "таблицу стилей".
+        <!--
+        В html, теги бывают парные (т.е, бывает открывающий и закрывающий тег) и одинарные (нету закрывающего тега). 
+        Синтаксис написания тегов очень простой:
+        	<имя тега (открывашка)>...</имя тега (закрывашка)>
+         -->
 
-	href="css/main.css"
-	А это ещё что за атрибут.. хреф? хрюф?
-	По Английски - "Hyper Reference", что значит гипер-ссылка.
+        <!--
+        В html уществуют разные-разные теги.
+        Самый часто используемый тег - это div.
+        Остальные теги используются для создания определенных тегов.
+		Например header - для заголовка сайта, nav - для меню навигации, footer - для подвала сайта.
+        -->
 
-	Этот атрибут обязателен для ссылок, так как в его значение прописывается путь к нашему CSS файлу.
-	Мы в значении атрибута написали "сss/main.css".. что это значит?
-	Это путь к нашему файлу.
-	Ну, это можно прочитать так:
-	"Залезть в папку css и найти файл main.css".
-
-	Вот и всё! после перезагрузки страницы в браузере всё изменится и будут применены
-	наши css стили. Теперь иди вниз...
-	-->
-	<link rel="stylesheet" href="css/main.css">
-
-	<!-- Добавим новый обнулятор -->
-	<link rel="stylesheet" href="css/main_resetter.css">
-
-	<title>HTML</title>
-</head>
-<body>
-	<!--
-											OLD
-		Шапка сайта
-<header>
-		Навигационное меню 
-		 <nav> 
- 			<a href="#"></a>
- 			<a href="#"></a>
- 			<a href="#"></a>
- 		 </nav>
-</header>
-	Строительные теги сайта, "колонны"
-	<div> Lorem ipsum dolor sit amet consectetur 	adipisicing elit. Atque quaerat vitae, placeat ut. 
-		  Ipsum nostrum quae nobis porro sed, error cum, facere, voluptatum perferendis quisquam, esse. 
-		  Aspernatur, nobis nisi sint!
-	</div>
-
-	 Подвал сайта 
-<footer>
-	Lorem ipsum dolor sit amet consectetur adipisicing elit.
-	Ducimus sint recusandae optio nihil eaque commodi minus quibusdam autem temporibus dolores.
-</footer>
-
-	 Блочные теги, начинаются с новой строки и имеют отступы 
-
-	  Заголовки 
-	<h1>Заголовок L.1</h1>
-	<h2>Заголовок L.2</h2>
-	<h3>Заголовок L.3</h3>
-	<h4>Заголовок L.4</h4>
-	<h5>Заголовок L.5</h5>
-	<h6>Заголовок L.6</h6>
-
-	  Абзацы 
-	<p>Абзац №1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, error.</p>
-	<p>Абзац №2- Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Porro, error.</p>
-
-	 Строчные теги, идут в одну строку 
-
-	  span - тег для выделения конкретных частей текста, обычно вставляют в тег <p> 
-
-	<span>содержимое тега span</span>
-	<span>содержимое тега span</span>
-	<span>содержимое тега span</span>
-
-	  a - тег для создания ссылок, один из важнейших тегов в HTML. Атрибут href указывает на место, 
-	 куда ведёт наша ссылка.
-	 Кроме href есть атрибут target, ему часто ставят значение _blank - благодаря нему наша ссылка 
-	 будет открываться в новой вкладке. 
-
-	<a target="_blank" href="https://google.com">какая-то ссылка</a>
-
-	  img - тег для вставки изображений на страницу. Атрибут src указывает 
-	 на то место, где расположено изображение, а alt - текст, который будет выводиться 
-	 на экран в случае если изображение по какой-то причине не отобразится. Height - 
-	 высота изображения, Width - ширина. -->
-
-	 <!-- <img src="img/bmw-m4-mashina.jpg" alt="BMW M4" height=150> -->
-
-	<!-- Нельзя помещать блочные теги в строчные,
-
-	<span>
-		<p></p>
-		<h1></h1>
+		<!-- Напишем наш первый тег - тег div. -->
 		<div></div>
-	</span>
+		<!--
+		Другие теги пишутся точно также.
+		Однако, следующие теги рекомендуется писать по одному разу на каждой странице.
+		Т.е - на каждую страницу один хедер, один футер, один нав и т.д.
+		 -->
+		<header>
+			<!--
+			Теги можно вкладывать друг в друга.
+			Создадим теги див внутри хедера:
+			-->
+			<div>Содержимое тега</div>
+			<div>Содержимое тега №2</div>
+		</header>
+		<nav></nav>
+		<footer></footer>
+		<!--
+		Кроме тегов в html есть еще и атрибуты тега. Это дополнительные команды для тега.
+		Атрибуты пишутся сразу после начинающего тега, а точнее сразу после его названия:
+			<имя тега атрибут="">...</имя тега>
+		Заиспользуем атрибут класса, для связи с таблицами каскадных стилей (CSS) -
+		-->
+		<div class="имя_класса"></div>
+		<!-- Подробнее о классах поговорим в следующих уроках. -->
 
-	 но можно помещать строчные теги в блочные. 
+		<!--
+		Помимо всего того, что я сказал - существуют такие определения как "блочный" тег.
+		И все наши строительные теги, которые мы писали - блочные.
+		But what is it?
+		Блочные теги - как балка в строительстве, которая занимает ВСЮ ширину здания.
+		Соответственно, каждый новый тег с его содержимым будет появляться на следующей строке.
+		Посмотрим, так ли это или нет. -
+		-->
 
-	<p><a target="_blank" href="https://ru.wikipedia.org/wiki/Lorem_ipsum">Lorem</a>
-		ipsum, dolor sit amet consectetur adipisicing elit.
-		<span>Harum expedita quisquam, consectetur aspernatur consequuntur error corrupti.</span> 
-		Expedita nulla necessitatibus error possimus, molestiae consectetur, commodi animi, est laborum, 
-		quod officiis adipisci.
-	</p>
+<br> <!-- Не обращайте внимания, вы ничего не видели, да... -->
 
-	 ul & ol - создают списки, нумерованные & ненумерованные (ol - ordered list - 
-	нумерованный список, ul - unordered list - ненумерованный список). Внутри этих тегов 
-	обязательно должны быть li (от англ. - list item, элемент списка).
-
-	<ul>
-		<li>содержимое элементов списка</li>
-		<li>содержимое элементов списка</li>
-		<li>содержимое элементов списка</li>
-	</ul>
-
-	<ol>
-		<li>содержимое элементов списка</li>
-		<li>содержимое элементов списка</li>
-		<li>содержимое элементов списка</li>
-	</ol> 
-
-											OLD
-
-	form - тег, который позволяет создать поля, веб-формы для 
-	ввода паролей, текста, логинов и т.п данных.
-	У него есть обязательный атрибут action, который отвечает за то, куда
-	будет идти вводимая информация, оставлять его пустым нельзя - это ошибка.
-	Атрибут method - он отвечает за метод передачи данных, его значения:
-
-	get -
-	Значение по умолчанию, при значении get передача данных идёт прямо в адресной строке,
-	они видны для любого пользователя и они (данные) могут быть использованы неоднократно.
-	Подходит для малого кол-ва данных.
-
-	post -
-	Передаёт данные скрытно, используя запрос браузера, это позволяет отправлять больше данных.
-	Если мы хотим, чтобы наша форма могла отправлять прикреплённые сообщения или фото, то
-	нам надо использовать метод post с другим атрибутом - enctype
-	со значением multipart/form-data. 
-
-	<form action="#" method="post" enctype="multipart/form-data"> 
-
-	Дальше идёт уже сам тег создания полей, input.
-
-	У него есть обязательный атрибут type, именно он отвечает за то, каким будет поле, т.е
-	для чего оно будет использоваться - для ввода логина, или же для ввода пароля.
-	Если говорить простым языком - если значение type указано для ввода логина - значит
-	туда (в поле) вводится текст, а если для ввода пароля - будут указаны как цифры так и буквы.
-	У атрибута type множество значений:
-
-	text - для ввода текстовой информации, как логин или информация
-	о пользователе.
-
-	password - для ввода пароля. 
-	Важно! - если значение password, то всё что мы будет вводить в
-	данное поле - будет скрыто звёздочками/кружками.
-
-	button - для создания кнопки.
-
-	radio - для создания радио-кнопки с выбором чего-то одного.
-	Важно! - названия двух радио-кнопок должны быть одинаковы.
-
-	checkbox - это значение похохе на радио-кнопку, но их отличия в том что мы можем выбрать сразу
-	несколько чего-то. Т.е - с radio можно выбрать что-то одно, а с checkbox - сразу несколько.
-
-	Есть ещё и редкое используемое значение tel, которое нужно 
-	для ввода номера телефона или любой другой информации в цифрах.
-	Например, при вводе цифровой информации на телефоне, клавиатура сама переключится
-	на цифровую и менять её уже не надо.
-
-	У атрибута type действительно много значений и указывать их всех я посчитал не нужным.
-
-	Дальше идёт атрибут name - его значение это название самого поля.
-
-	Атрибут value - то, что будет прописано в его значении будет отображаться
-	на месте для ввода некой информации в поле, т.е - значение по умолчанию.
-	Например, мы зарегистрировались на каком-то сайте, и уже при следующем
-	входе на сайт наш логин и пароль уже на своих местах, на своих полях.
-
-	Инпутам с типами radio и checkbox можно добавить атрибут checked, тогда этот
-	инпут будет выбран по умолчанию.
-
-	Инпуты с типом file позволяют выбрать какой нибудь файл, будь то фото или, например, аудио.
-	Но! - чтобы такие инпуты работали надо обязательно прописать самому тегу <form> прописать атрибут
-	enctype со значением multipart/form-data.
-
-	Значения атрибута name не должны повторяться, иначе сервер не поймет что пароль а что логин.
-
-	И ещё один важный атрибут инпутов - disabled. Он позволяет отключить определенный инпут,
-	т.е - с ним нельзя будет как-то да взаимодействовать, он станет серым и тусклым.
-	При нажатии на кнопку отправления формы, то что было в этой форме - не отправится на сервер.
-	Примечание - его можно использовать для любого инпута, кроме самого тега форм.
-
-	Атрибут placeholder у инпутов отвечает за то, что будет отображаться в поле до
-	ввода какой-то информации.
-	Я думаю что все видели на различных страничках для входа (а точнее
-	в их полях ввода) надпись "введите логин/пароль" в самом поле, а когда мы вводим текст -
-	он исчезает, словно его там и не было. Ну так вот, атрибут placeholder как раз отвечает за это.
-
-	И, наконец, я хотел бы отметить что теги input - строчные, т.е они будут идти в
-	одну строку. Можно инпуты разделить тегом br, а можно завернуть их 
-	в тег div. Но это уже кому как нравится :) 
-
-	<div>
-	<input placeholder="Введите логин" type="text" name="login" value="">
-	</div>
-<br>
-	<div>
-	<input placeholder="Введите пароль" type="password" name="passwd" value=""> 
-	</div>
-
-	<div>
-		<p><input checked type="radio" name="kvass" value="Темный квас">Тёмный квас</p>
-		<p><input type="radio" name="kvass" value="Светлый квас">Светлый квас</p>
-	</div>
-
-	<div>
-		<p><input type="radio" name="kvass_two" value="Темный квас">Тёмный квас</p>
-		<p><input checked type="radio" name="kvass_two" value="Светлый квас">Светлый квас</p>
-	</div>
-
-	<div>
-		<p><input checked type="checkbox" name="car" value="yes">Наличие автомобиля</p>
-		<p><input type="checkbox" name="moto" value="yes">Наличие мотоцикла</p>
-		<p><input checked type="checkbox" name="bike" value="yes">Наличие велосипеда</p>
-		<p><input type="checkbox" name="skate" value="yes">Наличие скейта</p>
-	</div>
-
-	<div>
-		<p><input type="file" name="picture"></p>
-	</div>
-
-	 Ещё один тег, тег textarea.
-	Он позволяет нам создать большое поле для ввода.  
-
-	<div>
-		<textarea name="text"></textarea>
-	</div>
-	Тег select - позволяет создать выпадающий список с вариантами выбора.
-	К нему обычно добавляют атрибут multiple, который позволит выбрать несколько вариантов.
-	Тег option - сам вариант выбора, теги select и option можно сравнить со списками:
-	ul сам список, а li его элемент, ну так вот - с select и option то же самое.
-	У тега option есть атрибут selected, он работает так же как атрибут checked у checkbox.
-
-	<div>	
-		<select name="color">
-			<option value="red">Красный</option>
-			<option value="blue">Синий</option>
-			<option value="purple">Фиолетовый</option>
-			<option value="yellow">Желтый</option>
-		</select>
-	</div>
-
-	Ну и тег button, тег кнопки.
-	Надпись на кнопке зависит от того, что находится между откр. и закр. тегами.
-	У него есть атрибут type, у которого есть свои значения:
-	1) submit. При нажатии на кнопку отправится форма.
-	2) reset. При нажатии на кнопку форма сбросит все значения у формы. 
-<br>
-	<div>
-		<button type="submit">Отправить</button>
-	</div>
-
-	</form>
-
-
-											OLD -->
-
-	<!--
-	О, ты уже здесь? круто!
-	Таак... мы с тобой обратились в нашем css файле ко всем тегам span, и теперь
-	какой бы текст мы не обернули в span - он становится красным и большим.
-	А что если мы хотим чтобы эти стили применялись лишь к конкретным span'ам?
-	Саааамый популярный способ - использовать селектор css по классам!
-
-	Что такое класс? это атрибут, который может быть указан для любого html тега, это
-	так сказать его собственное имя.
-	Класс добавляется вот так: class="(имя класса на Английском)".
-
-	А теперь добавим класс bigred к тегу span:
-	-->
-
-	<!--
-	UPDATE 1 - Убрал класс bigred у спанов, оставил у тега p, добавил еще тегов span.
-	UPDATE 2 - Добавил тег div с классом block, удалил класс bigred
-	 -->
-	 <!-- <div class="block">
-
-		<p>
-			Lorem ipsum dolor sit amet, <span>consectetur adipisicing elit.</span>
-			Suscipit, voluptate? <span>dolor sit amet consectetur adipisicing elit.</span> Iusto, aliquid.
-		</p>
-		<p>
-			Lorem <span>ipsum dolor sit amet</span>, consectetur adipisicing elit.
-		</p>
-
+		<!-- У нас есть header с nav внутри, а внутри nav'а свое содержимое: -->
+		<header>
+			<nav>Содержимое тега nav</nav>
+		</header>
+		<!-- У нас есть div с текстом рыбой: -->
 		<div>
-			<p>
-			Text
-			</p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quasi, commodi earum officiis fuga beatae sequi odio corporis eveniet voluptatem ducimus eaque obcaecati eius qui doloribus eum quaerat vitae. Quasi.
 		</div>
+		<!-- И второй div, тоже с текстом рыбкой, но поменьше: -->
+		<div>
+			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, assumenda?
+		</div>
+		<!-- И наконец третий div, тоже с текстом рыбой, но он будет сааамым малеьнким: -->
+		<div>
+			Lorem ipsum dolor sit amet.
+		</div>
+		<!-- И подвал, со своим содержимым: -->
+		<footer>Содержимое подвала</footer>
 
-	 </div> -->
+		<!--
+		Если посмотреть на наш файл в браузере, то можно с легкостью заметить, что все теги со своим
+		содержимым начинаются с новой строки.
+		Так и должно быть, они занимают всю ширину экрана и следующим тегам НЕТ места, поэтому они
+		и начинаются с новой строки. Всё нормально работает так, как и положено.
+		Но чем они отличаются от строчных - разберем в следующем уроке.
+		-->
 
-	 <!-- 
-	UPDATE 3 - Закомментировал весь код (дивы, параграфы, спаны).
-	Добавил параграф и неупорядоченный список.
-	  -->
-
-	  <p>
-		Text
-	  </p>
-
-	  <ul>
-		  <li>Text</li>
-		  <li>Text</li>
-		  <li>Text</li>
-	  </ul>
-
-	  <p>text text</p>
-
-	  <h2>Text</h2>
-	  
-	  <br><br>
-
-	  <!-- 
-	UPDATE 4 - Добавил параграфы.
-	   -->
-
-	   <p>
-		   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis sint et enim quae voluptate nam eaque harum.
-		   Dolores quis a atque ea consequatur magnam ratione saepe sint ipsum eaque. Nesciunt!
-	   </p>
-<br>
-	   <p class="arial">
-		   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-		   Alias ut illo quam, voluptatibus quae mollitia deleniti quos dignissimos!
-		   Vel quod iusto rerum amet sapiente commodi architecto corporis ullam et minus?
-	   </p>
-<br>
-		<p class="fontsize30">
-		  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure corporis dolor omnis est.
-		  Officia veniam exercitationem accusamus officiis eos culpa,
-		  tempore consequuntur nobis asperiores delectus alias saepe repellat? Culpa, dignissimos!
-		</p>
-<br>
-
-		<p class="italic">
-		  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-		  Nostrum quod corporis dolorum dolor quas quibusdam perferendis iusto libero beatae eaque.
-		  Quibusdam facere tempore quam, deleniti corporis ducimus exercitationem quis repellendus!
-		</p>
-
-<br>
-	   <p class="font700">
-		   Lorem ipsum dolor sit amet consectetur adipisicing elit.
-		   Qui distinctio voluptatem minus iure quos saepe repellat numquam laudantium dolore blanditiis!
-	   </p>
-<br>
-	   <p class="colorred">
-		   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, natus?
-		   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, velit!
-	   </p>
-<br>
-
-	   <p class="textright">
-		   Lorem ipsum dolor sit amet.
-	   </p>
-
-<br>
-	   <p class="decoration">
-		   Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, soluta!
-		   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, tenetur!
-	   </p>
-
-<br>
-	   <p class="shadow">
-		   Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, illum?
-		   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, numquam!
-	   </p>
-
-<br>
-	   <p class="uppercase">
-		   Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsam.
-		   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, dolorem.
-	   </p>
-
-<br>
-	   <p class="indent">
-		   Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quae.
-		   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, est.
-	   </p>
-<br>
-	   <p class="lspace">
-		   Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, illo?
-		   Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, facere.
-	   </p>
-<br>
-	   <p class="wspace">
-		   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, atque?
-		   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, dolore?
-	   </p>
-<br>
-	   <p class="whitespace">
-		   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa optio quod facilis,
-		   tempore obcaecati error nobis a provident molestias dolores earum, expedita nostrum,
-		   vero doloremque eligendi hic saepe modi itaque?
-	   </p>
-<br>
-	   <p class="lineheight">
-		   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, totam!
-		   <br>
-		   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, ipsam?
-		   <br>
-		   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, aut?
-		   <br>
-		   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, voluptates.
-	   </p>
-<!-- Скрипт -->
-<script src="script.js"></script>
-</body>
+		<!-- Урок №2 - HTML теги для контента -->
+		<!-- Допишу завтра. -->
+	</body>
 </html>
