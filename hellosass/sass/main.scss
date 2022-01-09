@@ -1,8 +1,23 @@
 .block {
-	font-size: 22px;
-	line-height: 20px;
-	padding: 20px;
-	span {
+	font-size: 50px;
+	line-height: 60px;
+	padding: 30px;
+	// >p {
+	// 	color: red;
+	// }
+	.block__text {
+		font-size: 80px;
+		span {
+			color: green;
+		}
+	}
+}
+
+
+.link {
+	color: blue;
+	text-decoration: underline;
+	&:hover {
 		color: green;
 	}
 }
