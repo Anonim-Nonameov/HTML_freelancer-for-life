@@ -1,5 +1,5 @@
 .block {
-	font-size: 50px;
+	// font-size: 50px;
 	line-height: 60px;
 	padding: 30px;
 	// >p {
@@ -11,13 +11,24 @@
 			color: green;
 		}
 	}
+	// &.parent--block {
+	// 	font-size: 55px;
+	// }
 }
 
 
 .link {
+	font-size: 25px;
 	color: blue;
 	text-decoration: underline;
 	&:hover {
 		color: green;
+	}
+
+	.block & {
+		font-size: 35px;
+		&:hover {
+			color: red;
+		}
 	}
 }

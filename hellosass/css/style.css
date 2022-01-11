@@ -1,5 +1,4 @@
 .block {
-  font-size: 50px;
   line-height: 60px;
   padding: 30px;
 }
@@ -11,9 +10,16 @@
 }
 
 .link {
+  font-size: 25px;
   color: blue;
   text-decoration: underline;
 }
 .link:hover {
   color: green;
+}
+.block .link {
+  font-size: 35px;
+}
+.block .link:hover {
+  color: red;
 }
