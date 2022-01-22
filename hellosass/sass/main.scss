@@ -1,3 +1,5 @@
+$fz: 80px;
+
 .block {
 	// font-size: 50px;
 	line-height: 60px;
@@ -6,7 +8,7 @@
 	// 	color: red;
 	// }
 	.block__text {
-		font-size: 80px;
+		font-size: $fz;
 		span {
 			color: green;
 		}
@@ -18,7 +20,7 @@
 
 
 .link {
-	font-size: 25px;
+	font-size: $fz;
 	color: blue;
 	text-decoration: underline;
 	&:hover {
@@ -26,7 +28,7 @@
 	}
 
 	.block & {
-		font-size: 35px;
+		font-size: $fz;
 		&:hover {
 			color: red;
 		}
