@@ -3,14 +3,14 @@
   padding: 30px;
 }
 .block .block__text {
-  font-size: 80px;
+  font-size: 100px;
 }
 .block .block__text span {
   color: green;
 }
 
 .link {
-  font-size: 80px;
+  font-size: 100px;
   color: blue;
   text-decoration: underline;
 }
@@ -18,7 +18,7 @@
   color: green;
 }
 .block .link {
-  font-size: 80px;
+  font-size: 100px;
 }
 .block .link:hover {
   color: red;

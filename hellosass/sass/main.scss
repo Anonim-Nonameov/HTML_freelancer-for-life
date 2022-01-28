@@ -1,4 +1,7 @@
-$fz: 80px;
+$fz: 100px;
+$color_1: blue;
+$color_2: red;
+$color_3: green;
 
 .block {
 	// font-size: 50px;
@@ -10,7 +13,7 @@ $fz: 80px;
 	.block__text {
 		font-size: $fz;
 		span {
-			color: green;
+			color: $color_3;
 		}
 	}
 	// &.parent--block {
@@ -21,16 +24,16 @@ $fz: 80px;
 
 .link {
 	font-size: $fz;
-	color: blue;
+	color: $color_1;
 	text-decoration: underline;
 	&:hover {
-		color: green;
+		color: $color_3;
 	}
 
 	.block & {
 		font-size: $fz;
 		&:hover {
-			color: red;
+			color: $color_2;
 		}
 	}
 }
