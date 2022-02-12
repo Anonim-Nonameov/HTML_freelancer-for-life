@@ -1,5 +1,10 @@
 @import "nullstyle.scss";
 
+
+%tplborder {
+	border-bottom: 5px dashed red;
+}
+
 $fz: 100px;
 $color_1: blue;
 $color_2: red;
@@ -38,6 +43,8 @@ $color_3: green;
 			color: $color_2;
 		}
 	}
+
+	@extend %tplborder
 }
 
 .link-2 {
