@@ -2,8 +2,9 @@
 
 
 %tplborder {
+	font-size: 110px;	
 	border-bottom: 5px dashed red;
-}
+};
 
 $fz: 100px;
 $color_1: blue;
@@ -44,7 +45,7 @@ $color_3: green;
 		}
 	}
 
-	@extend %tplborder
+	@extend %tplborder;
 }
 
 .link-2 {
