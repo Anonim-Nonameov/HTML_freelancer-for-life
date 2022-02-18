@@ -31,6 +31,7 @@ $color_3: green;
 
 
 .link {
+	@extend %tplborder;
 	font-size: $fz;
 	color: $color_1;
 	text-decoration: underline;
@@ -44,10 +45,10 @@ $color_3: green;
 			color: $color_2;
 		}
 	}
-
-	@extend %tplborder;
 }
 
 .link-2 {
+	@extend %tplborder;
 	font-size: 80px;
+	border-bottom: 5px dashed $color_3;
 }
