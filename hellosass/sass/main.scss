@@ -6,10 +6,13 @@
 	border-bottom: 5px dashed red;
 };
 
-.tplborder {
-	font-size: 110px;	
-	border-bottom: 5px dashed red;
+.fsitalic {
+	font-style: italic;
 };
+
+@mixin fontz($f) {
+	font-size: $f;
+}
 
 $fz: 100px;
 $color_1: blue;
@@ -54,6 +57,7 @@ $color_3: green;
 
 .link-2 {
 	@extend %tplborder;
-	font-size: 80px;
+	@extend .fsitalic;
+	@include fontz(110px);
 	border-bottom: 5px dashed $color_3;
 }
